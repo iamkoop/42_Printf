@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:07:04 by nildruon          #+#    #+#             */
-/*   Updated: 2025/10/24 17:20:50 by nildruon         ###   ########.fr       */
+/*   Updated: 2025/10/27 22:34:36 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,15 @@ void print_arg(char *s, va_list arg)
 	else if(s[0] == 's')
 		ft_putchar_fd(va_arg(arg, char), 1);
 	else if(s[0] == 'p')
-		ft_putchar_fd(va_arg(arg, char), 1);
+		(va_arg(arg, void *), 1);
 	else if(s[0] == 'd' || s[0] == 'i')
 		ft_putnbr_fd(va_arg(arg, int), 1);
 	else if(s[0] == 'u')
-		ft_putchar_fd(va_arg(arg, char), 1);
-	else if(s[0] == 'x')
-		ft_putchar_fd(va_arg(arg, char), 1);
-	else if(s[0] == 'X')
-		ft_putchar_fd(va_arg(arg, char), 1);
+		ft_putnbr_fd(va_arg(arg, long), 1);
+	else if(s[0] == 'x' || s[0] == 'X')
+		print_hex(s[0],va_arg(arg, unsigned int));
 	else if(s[0] == '%')
 		ft_putchar_fd(va_arg(arg, char), 1);
-		
 }
 
 char	*format_specifier(char	*c)
@@ -69,7 +66,7 @@ int	print_formated(const char *format, va_list arg)
 	return (1);
 }
 
-static int	arg_count(const char *format)
+/* static int	arg_count(const char *format)
 {
 	int		i;
 	int		cnt;
@@ -96,7 +93,7 @@ static int	arg_count(const char *format)
 		i++;
 	}
 	return (cnt);
-}
+} */
 
 int	ft_printf(const char *format, ...)
 {
@@ -104,6 +101,7 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	va_list	arg;
 
+	va_start(arg, format);
 	count_var = arg_count(format);
 	if (ft_strlen(format) == 0)
 		return (0);
@@ -114,6 +112,7 @@ int	ft_printf(const char *format, ...)
 	}
 	else
 		return (print_formated(format, arg));
+	va_end(arg);
 	return (0);
 }
 

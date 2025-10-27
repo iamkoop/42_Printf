@@ -1,15 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   pointer_converter.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 21:56:05 by nildruon          #+#    #+#             */
-/*   Updated: 2025/10/27 21:22:05 by nildruon         ###   ########.fr       */
+/*   Created: 2025/10/27 21:01:06 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/27 22:34:49 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-void print_hex(char c, uintptr_t nb);
+/* print_pointer(void *ptr)
+{
+	char c;
+	uintptr_t nb;
+	
+	
+	print_hex();
+} */
