@@ -1,17 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   putnbr_u_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 21:56:05 by nildruon          #+#    #+#             */
-/*   Updated: 2025/10/28 22:07:55 by nildruon         ###   ########.fr       */
+/*   Created: 2025/10/28 18:09:49 by nildruon          #+#    #+#             */
+/*   Updated: 2025/10/28 22:01:17 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int	print_hex(char c, uintptr_t nb, int len);
-int	print_pointer(void *ptr);
-int	putnbr_u_int(unsigned int n, int len);
+int	putnbr_u_int(unsigned int n, int len)
+{
+	char	c;
+
+	if (n >= 10)
+	{
+		len = putnbr_u_int(n / 10, len);
+	}
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+	len++;
+	return (len);
+}
+
+/* #include <stdio.h>
+
+int main (void)
+{
+	int i;
+	i = putnbr_u_int(123456789, 0);
+	printf("\n");
+	printf("%d", i);
+} */
