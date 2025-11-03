@@ -6,7 +6,7 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:07:04 by nildruon          #+#    #+#             */
-/*   Updated: 2025/11/03 17:20:51 by nildruon         ###   ########.fr       */
+/*   Updated: 2025/11/03 22:25:30 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,8 @@ int	ft_printf(const char *format, ...)
 {
 	int		count_var;
 	va_list	arg;
-
+	if(!format)
+		return (-1);
 	va_start(arg, format);
 	if (ft_strlen(format) == 0)
 		count_var = 0;

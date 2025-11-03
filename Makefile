@@ -6,7 +6,7 @@
 #    By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:28:47 by nildruon          #+#    #+#              #
-#    Updated: 2025/11/03 16:23:19 by nildruon         ###   ########.fr        #
+#    Updated: 2025/11/03 22:36:29 by nildruon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ fclean: clean
 
 clean:
 	$(REMOVE) $(OFILES)
+	@make -C $(LIBFT) clean
 
 re: fclean all
 
