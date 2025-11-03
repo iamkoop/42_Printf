@@ -6,7 +6,7 @@
 /*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:07:04 by nildruon          #+#    #+#             */
-/*   Updated: 2025/11/03 03:08:13 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2025/11/03 03:33:14 by nilsdruon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,13 @@ int	print_formated(const char *format, va_list arg)
 		specifier = format_specifier(&format[i], &skipped_spaces);
 		if (!specifier)
 		{
-			write(1, &format[i], 1);
+			write(1, &format[i++], 1);
 			cnt++;
-			i++;
 		}
 		else
 		{
+			if(*specifier == '\0')
+				return (-1);
 			cnt += print_arg(specifier, arg);
 			i += skipped_spaces;
 		}
@@ -214,18 +215,6 @@ int main(void)
 	ret1 = ft_printf("invalid: %");
 	ret2 = printf("\ninvalid: %");
 	printf("\nReturn values: ft: %d og: %d\n", ret1, ret2); //return -1 and don't printf % SOLVED
-
-	/* INVALID SPECIFIER - BEHAVIOUR UNDEFINED. WE DON'T HANDLE
-	printf("\n--- INVALID SPECIFIER ---\n");
-	ret1 = ft_printf("FT:What happens with %r\n");
-	ret2 = printf("OG:What happens with %r\n");
-	printf("Return values: ft: %d | original: %d\n", ret1, ret2);
-	*/
-	// THE SAME HERE
-	printf("\n---UNKNOWN FORMATSIGN---\n");
-	ret1 = ft_printf("unknown ft: %q\n", 42); //TODO handle
-	ret2 = printf("unknown og: %q\n", 42);
-	printf("Return values: ft: %d orig: %d\n", ret1, ret2);
 
 	printf("\n---CHAINED---\n");
 	ret1 = ft_printf("int: %d, hex: %x, char: %c, str: %s, percent: %%\n", 42, 255, 'A', "Hallo");
