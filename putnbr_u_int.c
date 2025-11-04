@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   putnbr_u_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:09:49 by nildruon          #+#    #+#             */
-/*   Updated: 2025/11/03 02:16:37 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2025/11/04 12:02:51 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	putnbr_u_int(unsigned int n, int len)
 {

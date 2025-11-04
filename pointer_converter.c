@@ -6,11 +6,11 @@
 /*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:01:06 by nildruon          #+#    #+#             */
-/*   Updated: 2025/11/03 16:39:35 by nildruon         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:16:39 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	print_pointer(void *ptr)
@@ -18,6 +18,11 @@ int	print_pointer(void *ptr)
 	uintptr_t	nb;
 	int			len;
 
+	if(!ptr)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	nb = (uintptr_t)ptr;
 	ft_putstr_fd("0x", 1);
 	len = 2 + print_hex('x', nb, 0);

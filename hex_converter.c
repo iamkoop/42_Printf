@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Hex_Converter.c                                    :+:      :+:    :+:   */
+/*   hex_converter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nilsdruon <nilsdruon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: nildruon <nildruon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:19:35 by nildruon          #+#    #+#             */
-/*   Updated: 2025/11/03 03:07:51 by nilsdruon        ###   ########.fr       */
+/*   Updated: 2025/11/04 12:02:08 by nildruon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	print_hex_help(int upper, unsigned int nb)
 {
